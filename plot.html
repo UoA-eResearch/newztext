@@ -14281,6 +14281,8 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s2">&quot;they_are_us.html&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span>
 <span class="n">df</span>
 </pre></div>
 
@@ -14325,40 +14327,47 @@ a.anchor-link {
       <th>Source</th>
       <th>Title</th>
     </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <th>2021-07-25</th>
       <td>(1) 5.71</td>
-      <td>25 Jul 2021</td>
+      <td>2021-07-25</td>
       <td>STUFF — STUFF.CO.NZ</td>
       <td>They Are Us film on hold - but director Andrew...</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>2021-04-08</th>
       <td>(2) 5.61</td>
-      <td>8 Apr 2021</td>
+      <td>2021-04-08</td>
       <td>THE PRESS</td>
       <td>Uyghurs are us  When Jacinda Ardern said ''the...</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>2021-07-13</th>
       <td>(3) 5.60</td>
-      <td>13 Jul 2021</td>
+      <td>2021-07-13</td>
       <td>STUFF — STUFF.CO.NZ</td>
       <td>They Are Us script fictionalises events after ...</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2021-07-25</th>
       <td>(4) 5.56</td>
-      <td>25 Jul 2021</td>
+      <td>2021-07-25</td>
       <td>STUFF — STUFF.CO.NZ</td>
       <td>Film Commission to review treatment of sensiti...</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>2021-07-21</th>
       <td>(5) 5.47</td>
-      <td>21 Jul 2021</td>
+      <td>2021-07-21</td>
       <td>STUFF — STUFF.CO.NZ</td>
       <td>Since May 2019, NZ Film Commission was in cont...</td>
     </tr>
@@ -14370,37 +14379,37 @@ a.anchor-link {
       <td>...</td>
     </tr>
     <tr>
-      <th>541</th>
+      <th>2019-12-13</th>
       <td>(542) 0.88</td>
-      <td>13 Dec 2019</td>
+      <td>2019-12-13</td>
       <td>New Zealand Herald Sat</td>
       <td>The people of  A Holy Qurâan sits on my desk...</td>
     </tr>
     <tr>
-      <th>542</th>
+      <th>2019-06-08</th>
       <td>(543) 0.78</td>
-      <td>8 Jun 2019</td>
+      <td>2019-06-08</td>
       <td>STUFF — STUFF.CO.NZ</td>
       <td>Axis of adventure: A first-time visit to Iran ...</td>
     </tr>
     <tr>
-      <th>543</th>
+      <th>2019-12-27</th>
       <td>(544) 0.78</td>
-      <td>27 Dec 2019</td>
+      <td>2019-12-27</td>
       <td>STUFF — STUFF.CO.NZ</td>
       <td>The decade of quake, massacre, explosion and f...</td>
     </tr>
     <tr>
-      <th>544</th>
+      <th>2019-12-27</th>
       <td>(545) 0.78</td>
-      <td>27 Dec 2019</td>
+      <td>2019-12-27</td>
       <td>THE PRESS</td>
       <td>No decade like it for Canterbury  Christchurch...</td>
     </tr>
     <tr>
-      <th>545</th>
+      <th>2019-12-28</th>
       <td>(546) 0.78</td>
-      <td>28 Dec 2019</td>
+      <td>2019-12-28</td>
       <td>STUFF — SUNDAY STAR-TIMES</td>
       <td>This is us: New Zealand's brightest reflect on...</td>
     </tr>
@@ -14495,15 +14504,138 @@ Name: Source, dtype: int64</pre>
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span>
-<span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;week&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">]:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;New Zealand Herald&quot;</span><span class="p">,</span> <span class="s2">&quot;New Zealand Herald Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Herald on Sunday&quot;</span><span class="p">,</span> <span class="s2">&quot;THE PRESS&quot;</span><span class="p">,</span> <span class="s2">&quot;STUFF — THE PRESS&quot;</span><span class="p">])]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(Timestamp(&#39;2019-03-15 00:00:00&#39;), Timestamp(&#39;2021-09-02 00:00:00&#39;))</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;New Zealand Herald&quot;</span><span class="p">,</span> <span class="s2">&quot;New Zealand Herald Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Herald on Sunday&quot;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>47</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;THE PRESS&quot;</span><span class="p">,</span> <span class="s2">&quot;STUFF — THE PRESS&quot;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>71</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;week&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">]:</span>
     <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;New Zealand Herald&quot;</span><span class="p">,</span> <span class="s2">&quot;New Zealand Herald Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Herald on Sunday&quot;</span><span class="p">])]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">interval</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Articles mentioning they are us&quot;</span><span class="p">)</span>
     <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;THE PRESS&quot;</span><span class="p">,</span> <span class="s2">&quot;STUFF — THE PRESS&quot;</span><span class="p">])]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">interval</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;NZ Herald&quot;</span><span class="p">,</span> <span class="s2">&quot;The Press&quot;</span><span class="p">])</span>
@@ -14576,10 +14708,12 @@ Name: Source, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s2">&quot;we_are_them.html&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span>
 <span class="n">df</span>
 </pre></div>
 
@@ -14596,7 +14730,7 @@ Name: Source, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
@@ -14624,96 +14758,103 @@ Name: Source, dtype: int64</pre>
       <th>Source</th>
       <th>Title</th>
     </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <th>2020-08-30</th>
       <td>(1) 3.08</td>
-      <td>30 Aug 2020</td>
+      <td>2020-08-30</td>
       <td>THE PRESS</td>
       <td>Coverage thanks  These last 17 months, and thi...</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>2019-05-24</th>
       <td>(2) 2.64</td>
-      <td>24 May 2019</td>
+      <td>2019-05-24</td>
       <td>New Zealand Herald Sat</td>
       <td>A quick word  Rubbishing Labour for slow progr...</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>2019-03-15</th>
       <td>(3) 2.64</td>
-      <td>15 Mar 2019</td>
+      <td>2019-03-15</td>
       <td>THE PRESS</td>
       <td>Gregory Fortuin asks nation to come together  ...</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2019-03-15</th>
       <td>(4) 2.64</td>
-      <td>15 Mar 2019</td>
+      <td>2019-03-15</td>
       <td>THE DOMINION POST</td>
       <td>Gregory Fortuin asks nation to come together  ...</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>2019-09-22</th>
       <td>(5) 2.64</td>
-      <td>22 Sep 2019</td>
+      <td>2019-09-22</td>
       <td>THE PRESS</td>
       <td>Obstacles overcome for sculpture  The decision...</td>
     </tr>
     <tr>
-      <th>5</th>
+      <th>2019-09-22</th>
       <td>(6) 2.64</td>
-      <td>22 Sep 2019</td>
+      <td>2019-09-22</td>
       <td>STUFF — STUFF.CO.NZ</td>
       <td>Japanese artist gifts origami-styled 'unity' s...</td>
     </tr>
     <tr>
-      <th>6</th>
+      <th>2021-09-07</th>
       <td>(7) 2.64</td>
-      <td>7 Sep 2021</td>
+      <td>2021-09-07</td>
       <td>Midweek Chronicle Whanganui</td>
       <td>Life not always easy but weâre in it togethe...</td>
     </tr>
     <tr>
-      <th>7</th>
+      <th>2019-04-06</th>
       <td>(8) 2.09</td>
-      <td>6 Apr 2019</td>
+      <td>2019-04-06</td>
       <td>Herald on Sunday</td>
       <td>Calling time on Muslim support  Former army ma...</td>
     </tr>
     <tr>
-      <th>8</th>
+      <th>2019-03-18</th>
       <td>(9) 1.77</td>
-      <td>18 Mar 2019</td>
+      <td>2019-03-18</td>
       <td>Bay of Plenty Times</td>
       <td>'We stand together' Tauranga Muslim woman Saim...</td>
     </tr>
     <tr>
-      <th>9</th>
+      <th>2019-01-16</th>
       <td>(10) 1.77</td>
-      <td>16 Jan 2019</td>
+      <td>2019-01-16</td>
       <td>Katikati Advertiser</td>
       <td>Liveable... how muchFlinching every time a sir...</td>
     </tr>
     <tr>
-      <th>10</th>
+      <th>2020-05-08</th>
       <td>(11) 1.77</td>
-      <td>8 May 2020</td>
+      <td>2020-05-08</td>
       <td>New Zealand Herald Sat</td>
       <td>A-CLASS DRUG A-CLASS DRUG  Itâs 1976. Volksw...</td>
     </tr>
     <tr>
-      <th>11</th>
+      <th>2019-11-09</th>
       <td>(12) 1.10</td>
-      <td>9 Nov 2019</td>
+      <td>2019-11-09</td>
       <td>STUFF — STUFF.CO.NZ</td>
       <td>Auckland rapper's 'uncomfortable' song honours...</td>
     </tr>
     <tr>
-      <th>12</th>
+      <th>2019-06-08</th>
       <td>(13) 0.76</td>
-      <td>8 Jun 2019</td>
+      <td>2019-06-08</td>
       <td>STUFF — STUFF.CO.NZ</td>
       <td>Axis of adventure: A first-time visit to Iran ...</td>
     </tr>
@@ -14731,12 +14872,121 @@ Name: Source, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span>
-<span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;week&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">]:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(Timestamp(&#39;2019-01-16 00:00:00&#39;), Timestamp(&#39;2021-09-07 00:00:00&#39;))</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;New Zealand Herald&quot;</span><span class="p">,</span> <span class="s2">&quot;New Zealand Herald Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Herald on Sunday&quot;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;THE PRESS&quot;</span><span class="p">,</span> <span class="s2">&quot;STUFF — THE PRESS&quot;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;week&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">]:</span>
     <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;New Zealand Herald&quot;</span><span class="p">,</span> <span class="s2">&quot;New Zealand Herald Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Herald on Sunday&quot;</span><span class="p">])]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">interval</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Articles mentioning we are them&quot;</span><span class="p">)</span>
     <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;THE PRESS&quot;</span><span class="p">,</span> <span class="s2">&quot;STUFF — THE PRESS&quot;</span><span class="p">])]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">interval</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;NZ Herald&quot;</span><span class="p">,</span> <span class="s2">&quot;The Press&quot;</span><span class="p">])</span>
